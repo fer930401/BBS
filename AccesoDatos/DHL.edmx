@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DHL_SCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="sp_WebAppAdmBBS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fecha" Type="datetime" Mode="In" />
+          <Parameter Name="num_empleado" Type="nvarchar" Mode="In" />
+          <Parameter Name="observador" Type="nvarchar" Mode="In" />
+          <Parameter Name="colaborador" Type="nvarchar" Mode="In" />
+          <Parameter Name="responsable" Type="nvarchar" Mode="In" />
+          <Parameter Name="cve_operacion" Type="nvarchar" Mode="In" />
+          <Parameter Name="hora" Type="time" Mode="In" />
+          <Parameter Name="cve_regla" Type="nvarchar" Mode="In" />
+          <Parameter Name="sub_regla1" Type="nvarchar" Mode="In" />
+          <Parameter Name="sub_regla2" Type="nvarchar" Mode="In" />
+          <Parameter Name="cve_comportamiento" Type="nvarchar" Mode="In" />
+          <Parameter Name="cve_turno" Type="nvarchar" Mode="In" />
+          <Parameter Name="observaciones" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="cve_empleador" Type="nvarchar" Mode="In" />
+          <Parameter Name="dia_bbs" Type="nvarchar" Mode="In" />
+          <Parameter Name="opc" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_WebAppBBS_cons_datos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="opc" Type="int" Mode="In" />
+          <Parameter Name="cve_filtro_1" Type="nvarchar" Mode="In" />
+          <Parameter Name="cve_filtro_2" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_WebAppBuscaUsuarioBBS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="num_empleado" Type="nvarchar" Mode="In" />
+          <Parameter Name="cuenta" Type="nvarchar" Mode="In" />
+          <Parameter Name="opc" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_WebAppConsultaBBS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="opc" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="DHL_SCModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DHL_SCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DHL_SCEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="sp_WebAppBBS_cons_datos" ReturnType="Collection(DHL_SCModel.sp_WebAppBBS_cons_datos_Result)">
+            <Parameter Name="opc" Mode="In" Type="Int32" />
+            <Parameter Name="cve_filtro_1" Mode="In" Type="String" />
+            <Parameter Name="cve_filtro_2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_WebAppConsultaBBS" ReturnType="Collection(DHL_SCModel.sp_WebAppConsultaBBS_Result)">
+          <Parameter Name="opc" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_WebAppBuscaUsuarioBBS" ReturnType="Collection(DHL_SCModel.sp_WebAppBuscaUsuarioBBS_Result)">
+            <Parameter Name="num_empleado" Mode="In" Type="String" />
+            <Parameter Name="cuenta" Mode="In" Type="String" />
+            <Parameter Name="opc" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_WebAppAdmBBS" ReturnType="Collection(DHL_SCModel.sp_WebAppAdmBBS_Result)">
+            <Parameter Name="fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="num_empleado" Mode="In" Type="String" />
+            <Parameter Name="observador" Mode="In" Type="String" />
+            <Parameter Name="colaborador" Mode="In" Type="String" />
+            <Parameter Name="responsable" Mode="In" Type="String" />
+            <Parameter Name="cve_operacion" Mode="In" Type="String" />
+            <Parameter Name="hora" Mode="In" Type="Time" />
+            <Parameter Name="cve_regla" Mode="In" Type="String" />
+            <Parameter Name="sub_regla1" Mode="In" Type="String" />
+            <Parameter Name="sub_regla2" Mode="In" Type="String" />
+            <Parameter Name="cve_comportamiento" Mode="In" Type="String" />
+            <Parameter Name="cve_turno" Mode="In" Type="String" />
+            <Parameter Name="observaciones" Mode="In" Type="String" />
+            <Parameter Name="cve_empleador" Mode="In" Type="String" />
+            <Parameter Name="dia_bbs" Mode="In" Type="String" />
+            <Parameter Name="opc" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_WebAppBBS_cons_datos_Result">
+          <Property Type="String" Name="cve_dato" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="dato" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_WebAppConsultaBBS_Result">
+          <Property Type="Int32" Name="id_incidencia" Nullable="false" />
+          <Property Type="String" Name="observador" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="fec_registro" Nullable="false" Precision="23" />
+          <Property Type="String" Name="num_empleado" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="colaborador" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="responsable" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="cve_operacion" Nullable="true" MaxLength="50" />
+          <Property Type="Time" Name="hora" Nullable="true" />
+          <Property Type="String" Name="sub_regla1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="sub_regla2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="cve_regla" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="cve_comportamiento" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ofs" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="observaciones" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="cve_empleador" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="mes_bbs" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="dia_bbs" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="hora_bbs" Nullable="false" />
+          <Property Type="String" Name="cve_turno" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="num_semana" Nullable="false" />
+          <Property Type="Int32" Name="num_dia" Nullable="false" />
+          <Property Type="DateTime" Name="fec_actualizacion" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="sp_WebAppBuscaUsuarioBBS_Result">
+          <Property Type="String" Name="cve_empleado" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="nom_empleado" Nullable="true" />
+          <Property Type="String" Name="cve_cuenta" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="nom_cuenta" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_WebAppAdmBBS_Result">
+          <Property Type="Int32" Name="error" Nullable="true" />
+          <Property Type="String" Name="mensaje" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DHL_SCModelStoreContainer" CdmEntityContainer="DHL_SCEntities" >
+          <FunctionImportMapping FunctionImportName="sp_WebAppBBS_cons_datos" FunctionName="DHL_SCModel.Store.sp_WebAppBBS_cons_datos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppBBS_cons_datos_Result">
+                <ScalarProperty Name="cve_dato" ColumnName="cve_dato" />
+                <ScalarProperty Name="dato" ColumnName="dato" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_WebAppConsultaBBS" FunctionName="DHL_SCModel.Store.sp_WebAppConsultaBBS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppConsultaBBS_Result">
+                <ScalarProperty Name="id_incidencia" ColumnName="id_incidencia" />
+                <ScalarProperty Name="observador" ColumnName="observador" />
+                <ScalarProperty Name="fec_registro" ColumnName="fec_registro" />
+                <ScalarProperty Name="num_empleado" ColumnName="num_empleado" />
+                <ScalarProperty Name="colaborador" ColumnName="colaborador" />
+                <ScalarProperty Name="responsable" ColumnName="responsable" />
+                <ScalarProperty Name="cve_operacion" ColumnName="cve_operacion" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="sub_regla1" ColumnName="sub_regla1" />
+                <ScalarProperty Name="sub_regla2" ColumnName="sub_regla2" />
+                <ScalarProperty Name="cve_regla" ColumnName="cve_regla" />
+                <ScalarProperty Name="cve_comportamiento" ColumnName="cve_comportamiento" />
+                <ScalarProperty Name="ofs" ColumnName="ofs" />
+                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+                <ScalarProperty Name="cve_empleador" ColumnName="cve_empleador" />
+                <ScalarProperty Name="mes_bbs" ColumnName="mes_bbs" />
+                <ScalarProperty Name="dia_bbs" ColumnName="dia_bbs" />
+                <ScalarProperty Name="hora_bbs" ColumnName="hora_bbs" />
+                <ScalarProperty Name="cve_turno" ColumnName="cve_turno" />
+                <ScalarProperty Name="num_semana" ColumnName="num_semana" />
+                <ScalarProperty Name="num_dia" ColumnName="num_dia" />
+                <ScalarProperty Name="fec_actualizacion" ColumnName="fec_actualizacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_WebAppBuscaUsuarioBBS" FunctionName="DHL_SCModel.Store.sp_WebAppBuscaUsuarioBBS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppBuscaUsuarioBBS_Result">
+                <ScalarProperty Name="cve_empleado" ColumnName="cve_empleado" />
+                <ScalarProperty Name="nom_empleado" ColumnName="nom_empleado" />
+                <ScalarProperty Name="cve_cuenta" ColumnName="cve_cuenta" />
+                <ScalarProperty Name="nom_cuenta" ColumnName="nom_cuenta" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_WebAppAdmBBS" FunctionName="DHL_SCModel.Store.sp_WebAppAdmBBS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppAdmBBS_Result">
+                <ScalarProperty Name="error" ColumnName="error" />
+                <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

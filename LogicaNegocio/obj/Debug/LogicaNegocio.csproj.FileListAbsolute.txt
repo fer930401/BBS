@@ -1,0 +1,11 @@
+C:\Users\fer_9\Documents\Repositorios\BBS\LogicaNegocio\obj\Debug\LogicaNegocio.csprojResolveAssemblyReference.cache
+C:\Users\fer_9\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\LogicaNegocio.dll
+C:\Users\fer_9\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
+C:\Users\fer_9\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\AccesoDatos.dll
+C:\Users\fer_9\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\Entidades.dll
+C:\Users\fer_9\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\EntityFramework.dll
+C:\Users\fer_9\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\AccesoDatos.pdb
+C:\Users\fer_9\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\Entidades.pdb
+C:\Users\fer_9\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\EntityFramework.xml
+C:\Users\fer_9\Documents\Repositorios\BBS\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+C:\Users\fer_9\Documents\Repositorios\BBS\LogicaNegocio\obj\Debug\LogicaNegocio.pdb

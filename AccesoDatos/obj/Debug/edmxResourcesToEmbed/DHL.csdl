@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DHL_SCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DHL_SCEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_WebAppBBS_cons_datos" ReturnType="Collection(DHL_SCModel.sp_WebAppBBS_cons_datos_Result)">
+      <Parameter Name="opc" Mode="In" Type="Int32" />
+      <Parameter Name="cve_filtro_1" Mode="In" Type="String" />
+      <Parameter Name="cve_filtro_2" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_WebAppConsultaBBS" ReturnType="Collection(DHL_SCModel.sp_WebAppConsultaBBS_Result)">
+      <Parameter Name="opc" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_WebAppBuscaUsuarioBBS" ReturnType="Collection(DHL_SCModel.sp_WebAppBuscaUsuarioBBS_Result)">
+      <Parameter Name="num_empleado" Mode="In" Type="String" />
+      <Parameter Name="cuenta" Mode="In" Type="String" />
+      <Parameter Name="opc" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_WebAppAdmBBS" ReturnType="Collection(DHL_SCModel.sp_WebAppAdmBBS_Result)">
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+      <Parameter Name="num_empleado" Mode="In" Type="String" />
+      <Parameter Name="observador" Mode="In" Type="String" />
+      <Parameter Name="colaborador" Mode="In" Type="String" />
+      <Parameter Name="responsable" Mode="In" Type="String" />
+      <Parameter Name="cve_operacion" Mode="In" Type="String" />
+      <Parameter Name="hora" Mode="In" Type="Time" />
+      <Parameter Name="cve_regla" Mode="In" Type="String" />
+      <Parameter Name="sub_regla1" Mode="In" Type="String" />
+      <Parameter Name="sub_regla2" Mode="In" Type="String" />
+      <Parameter Name="cve_comportamiento" Mode="In" Type="String" />
+      <Parameter Name="cve_turno" Mode="In" Type="String" />
+      <Parameter Name="observaciones" Mode="In" Type="String" />
+      <Parameter Name="cve_empleador" Mode="In" Type="String" />
+      <Parameter Name="dia_bbs" Mode="In" Type="String" />
+      <Parameter Name="opc" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_WebAppBBS_cons_datos_Result">
+    <Property Type="String" Name="cve_dato" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="dato" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_WebAppConsultaBBS_Result">
+    <Property Type="Int32" Name="id_incidencia" Nullable="false" />
+    <Property Type="String" Name="observador" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="fec_registro" Nullable="false" Precision="23" />
+    <Property Type="String" Name="num_empleado" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="colaborador" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="responsable" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cve_operacion" Nullable="true" MaxLength="50" />
+    <Property Type="Time" Name="hora" Nullable="true" />
+    <Property Type="String" Name="sub_regla1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sub_regla2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cve_regla" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cve_comportamiento" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ofs" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="observaciones" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="cve_empleador" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mes_bbs" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="dia_bbs" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="hora_bbs" Nullable="false" />
+    <Property Type="String" Name="cve_turno" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="num_semana" Nullable="false" />
+    <Property Type="Int32" Name="num_dia" Nullable="false" />
+    <Property Type="DateTime" Name="fec_actualizacion" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_WebAppBuscaUsuarioBBS_Result">
+    <Property Type="String" Name="cve_empleado" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="nom_empleado" Nullable="true" />
+    <Property Type="String" Name="cve_cuenta" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="nom_cuenta" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_WebAppAdmBBS_Result">
+    <Property Type="Int32" Name="error" Nullable="true" />
+    <Property Type="String" Name="mensaje" Nullable="true" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DHL_SCModelStoreContainer" CdmEntityContainer="DHL_SCEntities">
+    <FunctionImportMapping FunctionImportName="sp_WebAppBBS_cons_datos" FunctionName="DHL_SCModel.Store.sp_WebAppBBS_cons_datos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppBBS_cons_datos_Result">
+          <ScalarProperty Name="cve_dato" ColumnName="cve_dato" />
+          <ScalarProperty Name="dato" ColumnName="dato" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_WebAppConsultaBBS" FunctionName="DHL_SCModel.Store.sp_WebAppConsultaBBS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppConsultaBBS_Result">
+          <ScalarProperty Name="id_incidencia" ColumnName="id_incidencia" />
+          <ScalarProperty Name="observador" ColumnName="observador" />
+          <ScalarProperty Name="fec_registro" ColumnName="fec_registro" />
+          <ScalarProperty Name="num_empleado" ColumnName="num_empleado" />
+          <ScalarProperty Name="colaborador" ColumnName="colaborador" />
+          <ScalarProperty Name="responsable" ColumnName="responsable" />
+          <ScalarProperty Name="cve_operacion" ColumnName="cve_operacion" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="sub_regla1" ColumnName="sub_regla1" />
+          <ScalarProperty Name="sub_regla2" ColumnName="sub_regla2" />
+          <ScalarProperty Name="cve_regla" ColumnName="cve_regla" />
+          <ScalarProperty Name="cve_comportamiento" ColumnName="cve_comportamiento" />
+          <ScalarProperty Name="ofs" ColumnName="ofs" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="cve_empleador" ColumnName="cve_empleador" />
+          <ScalarProperty Name="mes_bbs" ColumnName="mes_bbs" />
+          <ScalarProperty Name="dia_bbs" ColumnName="dia_bbs" />
+          <ScalarProperty Name="hora_bbs" ColumnName="hora_bbs" />
+          <ScalarProperty Name="cve_turno" ColumnName="cve_turno" />
+          <ScalarProperty Name="num_semana" ColumnName="num_semana" />
+          <ScalarProperty Name="num_dia" ColumnName="num_dia" />
+          <ScalarProperty Name="fec_actualizacion" ColumnName="fec_actualizacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_WebAppBuscaUsuarioBBS" FunctionName="DHL_SCModel.Store.sp_WebAppBuscaUsuarioBBS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppBuscaUsuarioBBS_Result">
+          <ScalarProperty Name="cve_empleado" ColumnName="cve_empleado" />
+          <ScalarProperty Name="nom_empleado" ColumnName="nom_empleado" />
+          <ScalarProperty Name="cve_cuenta" ColumnName="cve_cuenta" />
+          <ScalarProperty Name="nom_cuenta" ColumnName="nom_cuenta" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_WebAppAdmBBS" FunctionName="DHL_SCModel.Store.sp_WebAppAdmBBS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppAdmBBS_Result">
+          <ScalarProperty Name="error" ColumnName="error" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

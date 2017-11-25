@@ -18,25 +18,25 @@
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
                             <center>
-                                <img src="Images/Incidencia1.jpg" height="450" />
+                                <img src="Images/bbs.png" height="450" />
                                 <div class="carousel-caption">
-                                    Incidencia 1
+                                    BBS 1
                                 </div>
                             </center>
                         </div>
                         <div class="item" >
                             <center>
-                                <img src="Images/Incidencia2.jpg" height="450" />
+                                <img src="Images/bbs.png" height="450" />
                                 <div class="carousel-caption">
-                                    Incidencia 2
+                                    BBS 2
                                 </div>
                             </center>
                         </div>
                         <div class="item">
                             <center>
-                                <img src="Images/Incidencia3.jpg" height="450" />
+                                <img src="Images/bbs.png" height="450" />
                                 <div class="carousel-caption">
-                                    Incidencia 3
+                                    BBS 3
                                 </div>
                             </center>
                         </div>
