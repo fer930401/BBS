@@ -35,7 +35,7 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="Index.aspx"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
                         <li><a runat="server" href="AltaBBS.aspx"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Registra BBS</a></li>
-                        <li><a runat="server" href="BBS.aspx"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Consulta BBS</a></li>
+                        <li><a runat="server" href="Estadistica.aspx"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Consulta BBS</a></li>
                     </ul>
                 </div>
             </div>

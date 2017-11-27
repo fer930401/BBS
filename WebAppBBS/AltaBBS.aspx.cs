@@ -101,7 +101,7 @@ namespace WebAppBBS
         }
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            DateTime fecha = DateTime.Parse(txtFecha.ToString());
+            DateTime fecha = DateTime.Parse(txtFecha.Text);
             string cve_empleado = txtNumEmpleado.Text;
             string nom_observador = txtObservador.Text;
             string colaborador = ddlColaborador.SelectedItem.Text;
@@ -115,6 +115,21 @@ namespace WebAppBBS
             string cve_turno = ddlTurno.SelectedValue;
             string observaciones = txtObs.Text;
             string dia = ddlDias.SelectedValue;
+            int? opc = 1;
+
+            Entidades.sp_WebAppAdmBBS_Result insertaBBS = logicaNegocio.insertaBBS(fecha, cve_empleado, nom_observador, colaborador, nom_coordinador, cve_operacion, TimeSpan.Parse("0"), cve_regla, cve_tip_regla, cve_subregla, cve_comportamiento, cve_turno, observaciones, cve_empleador, dia, opc);
+
+            error = insertaBBS.error;
+            mensaje = insertaBBS.mensaje;
+
+            if (error == 0)
+            {
+                Response.Write("<script type=\"text/javascript\">alert('Procesado Exitosamente'); window.location.href = 'Index.aspx';</script>");
+            }
+            else
+            {
+                Response.Write("<script type=\"text/javascript\">alert('Ocurrio un error" + mensaje + "'); window.location.href = 'AltaBBS.aspx';</script>");
+            }
         }
 
     }

@@ -111,6 +111,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Estadistica.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\DHL-Logo.jpg" />
     <Content Include="Images\dhl-logo.png" />
@@ -188,6 +189,13 @@
     </Compile>
     <Compile Include="BBS.aspx.designer.cs">
       <DependentUpon>BBS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estadistica.aspx.cs">
+      <DependentUpon>Estadistica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estadistica.aspx.designer.cs">
+      <DependentUpon>Estadistica.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
