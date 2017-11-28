@@ -28,7 +28,12 @@ namespace WebAppBBS
         public void BBSGraf(int opc, string regla)
         {
             List<Entidades.sp_WebAppBBS_cons_datos_Result> contadorBBS = logicaNegocio.consultaDatos(opc, regla, "");
+            List<Entidades.sp_WebAppBBS_cons_datos_Result> contadorPositivo = logicaNegocio.consultaDatos(opc, regla, "compo1");
+            List<Entidades.sp_WebAppBBS_cons_datos_Result> contadorNegativo = logicaNegocio.consultaDatos(opc, regla, "compo2");
+
             string datos = "";
+            string positivo = "";
+            string negativo = "";
             for(int i = 0; i < contadorBBS.Count; i++){
                 datos = datos + "{ name: '" + contadorBBS[i].dato.Replace("\r\n","") + "', y: "+ contadorBBS[i].cve_dato +"},";
             }
