@@ -13,6 +13,8 @@ namespace WebAppBBS
         LogicaNegocio.LogicaNegocioCls logicaNegocio = new LogicaNegocio.LogicaNegocioCls();
         string mensaje = "";
         int? error = 0;
+        int y2 = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             BBSGraf(9, "colaborador");
@@ -28,14 +30,37 @@ namespace WebAppBBS
         public void BBSGraf(int opc, string regla)
         {
             List<Entidades.sp_WebAppBBS_cons_datos_Result> contadorBBS = logicaNegocio.consultaDatos(opc, regla, "");
-            List<Entidades.sp_WebAppBBS_cons_datos_Result> contadorPositivo = logicaNegocio.consultaDatos(opc, regla, "compo1");
-            List<Entidades.sp_WebAppBBS_cons_datos_Result> contadorNegativo = logicaNegocio.consultaDatos(opc, regla, "compo2");
+            List<Entidades.sp_WebAppBBS_cons_datos_Result> comportamiento = logicaNegocio.consultaDatos(14, regla, "");
 
             string datos = "";
-            string positivo = "";
-            string negativo = "";
+            string subserie = "";
+            int y3 = 0;
             for(int i = 0; i < contadorBBS.Count; i++){
-                datos = datos + "{ name: '" + contadorBBS[i].dato.Replace("\r\n","") + "', y: "+ contadorBBS[i].cve_dato +"},";
+                //datos = datos + "{ name: '" + contadorBBS[i].dato.Replace("\r\n", "") + "', y: " + contadorBBS[i].cve_dato + ",drilldown:" + contadorBBS[i].dato.Replace("\r\n", "") + "},";
+                if (regla.Equals("acto") == true || regla.Contains("regla") == true)
+                {
+                    datos = datos + "{ name: '" + contadorBBS[i].dato.Replace("\r\n", "") + "', y: " + contadorBBS[i].cve_dato + ",drilldown:'" + contadorBBS[i].dato.Replace("\r\n", "") + "'},";
+                    subserie = "{ name: '" + contadorBBS[i].dato.Replace("\r\n", "") + "', id: '" + contadorBBS[i].dato.Replace("\r\n", "") + "', data: [";
+                    for (int y = 0; y < comportamiento.Count; y++)
+                    {
+                        if (comportamiento[y].dato.Replace("\r\n", "").Trim().Contains(contadorBBS[i].dato.Replace("\r\n", "").Trim()) == true)
+                        {
+                            subserie = subserie + "['" + comportamiento[y].dato.Replace("\r\n", "") + "', " + comportamiento[y].cve_dato + "],";
+                        }
+                    }
+                    subserie = subserie + "]},";
+                    variables.Drilldown[y2,y3] = subserie;
+                    y3++;
+                }
+                else
+                {
+                    datos = datos + "{ name: '" + contadorBBS[i].dato.Replace("\r\n", "") + "', y: " + contadorBBS[i].cve_dato + ",},";
+                }
+            }
+            if (regla.Equals("acto") == true || regla.Contains("regla") == true)
+            {
+                y2++;
+                error = variables.Drilldown.Length;
             }
             if (regla.Equals("regla1") == true)
             {

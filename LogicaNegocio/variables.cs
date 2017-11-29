@@ -64,7 +64,7 @@ namespace LogicaNegocio
             set { variables.observador = value; }
         }
 
-        static string[,] drilldown = new string[100, 2];
+        static string[,] drilldown = new string[10, 50];
         public static string[,] Drilldown
         {
             get { return variables.drilldown; }
