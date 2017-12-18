@@ -9,3 +9,17 @@ C:\Users\fer_9\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\Entidades.pdb
 C:\Users\fer_9\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\EntityFramework.xml
 C:\Users\fer_9\Documents\Repositorios\BBS\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\fer_9\Documents\Repositorios\BBS\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+C:\Users\fergarciav\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\LogicaNegocio.dll
+C:\Users\fergarciav\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
+C:\Users\fergarciav\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\AccesoDatos.dll
+C:\Users\fergarciav\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\Entidades.dll
+C:\Users\fergarciav\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\EntityFramework.dll
+C:\Users\fergarciav\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\AccesoDatos.pdb
+C:\Users\fergarciav\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\AccesoDatos.dll.config
+C:\Users\fergarciav\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\Entidades.pdb
+C:\Users\fergarciav\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\Entidades.dll.config
+C:\Users\fergarciav\Documents\Repositorios\BBS\LogicaNegocio\bin\Debug\EntityFramework.xml
+C:\Users\fergarciav\Documents\Repositorios\BBS\LogicaNegocio\obj\Debug\LogicaNegocio.csprojResolveAssemblyReference.cache
+C:\Users\fergarciav\Documents\Repositorios\BBS\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\fergarciav\Documents\Repositorios\BBS\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+C:\Users\fergarciav\Documents\Repositorios\BBS\LogicaNegocio\obj\Debug\LogicaNegocio.pdb

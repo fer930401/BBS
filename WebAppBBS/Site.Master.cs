@@ -20,9 +20,18 @@ namespace WebAppBBS
             }
             else 
             {
+                if(Session["rol_user"].Equals("GER") == true || Session["rol_user"].Equals("SUPOMS") == true || Session["rol_user"].Equals("SUPOPR") == true)
+                {
+                    Session["visibleConsulta"] = "";
+                }
+                else
+                {
+                    Session["visibleConsulta"] = "style = 'display:none'";
+                }
                 Session["visibleOpciones"] = "";
                 Session["visibleLogin"] = "style = 'display:none'";
                 Session["visibleLogout"] = "";
+                lblUser.Text = Session["nom_user"].ToString();
             }
         }
 

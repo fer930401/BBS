@@ -68,7 +68,7 @@ namespace WebAppBBS
             ddlTurno.DataBind();
             ddlTurno.Items.Insert(0, new ListItem("Selecciona el Turno", "NA"));
 
-            ddlColaborador.DataSource = logicaNegocio.consultaDatos(8, "MDLZ", "");
+            ddlColaborador.DataSource = logicaNegocio.consultaDatos(8, "", "");
             ddlColaborador.DataTextField = "dato";
             ddlColaborador.DataValueField = "cve_dato";
             ddlColaborador.DataBind();            
@@ -92,10 +92,20 @@ namespace WebAppBBS
             if (string.IsNullOrEmpty(txtNumEmpleado.Text) == false)
             {
                 string cve_empleado = txtNumEmpleado.Text.ToString();
-                string cve_cuenta = "MDLZ";
+                string cve_cuenta = "";
                 var infoUsr = logicaNegocio.consultaUsr(cve_empleado, cve_cuenta, 0);
 
-                txtObservador.Text = infoUsr[0].nom_empleado.ToString();
+                if(infoUsr.Count != 0)
+                {
+                    txtObservador.Text = infoUsr[0].nom_empleado.ToString();
+                }
+                else
+                {
+                    txtObservador.Text = "";
+                    txtObservador.Enabled = true;
+                }
+
+                //txtObservador.Text = infoUsr[0].nom_empleado.ToString();
                 //Response.Write("<script type=\"text/javascript\">alert('"+infoUsr[0].nom_empleado.ToString()+"');</script>");
             }
         }

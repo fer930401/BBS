@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DHL_SCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="sp_WebAppAdmBBS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fecha" Type="datetime" Mode="In" />
+    <Parameter Name="num_empleado" Type="nvarchar" Mode="In" />
+    <Parameter Name="observador" Type="nvarchar" Mode="In" />
+    <Parameter Name="colaborador" Type="nvarchar" Mode="In" />
+    <Parameter Name="responsable" Type="nvarchar" Mode="In" />
+    <Parameter Name="cve_operacion" Type="nvarchar" Mode="In" />
+    <Parameter Name="hora" Type="time" Mode="In" />
+    <Parameter Name="cve_regla" Type="nvarchar" Mode="In" />
+    <Parameter Name="sub_regla1" Type="nvarchar" Mode="In" />
+    <Parameter Name="sub_regla2" Type="nvarchar" Mode="In" />
+    <Parameter Name="cve_comportamiento" Type="nvarchar" Mode="In" />
+    <Parameter Name="cve_turno" Type="nvarchar" Mode="In" />
+    <Parameter Name="observaciones" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="cve_empleador" Type="nvarchar" Mode="In" />
+    <Parameter Name="dia_bbs" Type="nvarchar" Mode="In" />
+    <Parameter Name="opc" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_WebAppBBS_cons_datos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="opc" Type="int" Mode="In" />
+    <Parameter Name="cve_filtro_1" Type="nvarchar" Mode="In" />
+    <Parameter Name="cve_filtro_2" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_WebAppBuscaUsuarioBBS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="num_empleado" Type="nvarchar" Mode="In" />
+    <Parameter Name="cuenta" Type="nvarchar" Mode="In" />
+    <Parameter Name="opc" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_WebAppConsultaBBS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="opc" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="DHL_SCModelStoreContainer" />
+</Schema>
