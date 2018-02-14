@@ -39,7 +39,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Num Empleado:</label>
-                            <asp:TextBox ID="txtNumEmpleado" runat="server" CssClass="form-control" OnTextChanged="txtNumEmpleado_TextChanged" AutoPostBack="true" TabIndex="2" required></asp:TextBox>
+                            <asp:TextBox ID="txtNumEmpleado" runat="server" CssClass="form-control" ReadOnly AutoPostBack="true" TabIndex="2" required></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label>Nombre del Coordinador:</label>
@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group">
                             <label>Regla:</label>
-                            <asp:DropDownList ID="ddlRegla" runat="server" CssClass="form-control" TabIndex="8"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlRegla" runat="server" CssClass="form-control" TabIndex="8" OnSelectedIndexChanged="ddlRegla_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                         </div>
                         <div class="form-group">
                             <label>Comportamiento:</label>

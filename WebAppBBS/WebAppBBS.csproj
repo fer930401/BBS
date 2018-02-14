@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AltaBBS.aspx" />
+    <Content Include="AltaUsuarios.aspx" />
     <Content Include="BBS.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -142,6 +143,13 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\highcharts\data.js" />
+    <Content Include="Scripts\highcharts\drilldown.js" />
+    <Content Include="Scripts\highcharts\exporting.js" />
+    <Content Include="Scripts\highcharts\highcharts.js" />
+    <Content Include="Scripts\highcharts\highslide-full.min.js" />
+    <Content Include="Scripts\highcharts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\highcharts\series-label.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -189,6 +197,13 @@
     </Compile>
     <Compile Include="AltaBBS.aspx.designer.cs">
       <DependentUpon>AltaBBS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltaUsuarios.aspx.cs">
+      <DependentUpon>AltaUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaUsuarios.aspx.designer.cs">
+      <DependentUpon>AltaUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />

@@ -1,16 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Estadistica.aspx.cs" Inherits="WebAppBBS.Estadistica" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <meta http-equiv="refresh" content="120" />
+    <script src="Scripts/highcharts/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="Scripts/highcharts/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="Scripts/highcharts/jquery-3.1.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- <script src="Scripts/highcharts/data.js"></script> -->
     <script src="https://code.highcharts.com/modules/data.js"></script>
-
+    <!-- <script src="Scripts/highcharts/series-label.js"></script> -->
     <script src="https://code.highcharts.com/modules/series-label.js"></script>
 
-                <script src="https://code.highcharts.com/modules/data.js"></script>
-                <script src="https://code.highcharts.com/modules/drilldown.js"></script>
-
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <!-- <script src="https://code.highcharts.com/modules/drilldown.js"></script> -->
+    <script src="Scripts/highcharts/drilldown.js"></script>
     <!-- Additional files for the Highslide popup effect -->
     <script src="https://www.highcharts.com/media/com_demo/js/highslide-full.min.js"></script>
     <br />
@@ -52,7 +56,7 @@
                             type: 'pie'
                         },
                         title: {
-                            text: 'Nombre del observador',
+                            text: 'Observadores',
                             style: {
                                 color: 'black',
                                 fontSize: '16px',

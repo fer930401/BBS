@@ -18,10 +18,19 @@ namespace WebAppBBS
             //el campo de operacion se llena en base al numero de empleado
             if (!IsPostBack)
             {
-                txtFecha.Text = DateTime.Now.ToString("yyyy-MM-dd");
-                llenaCombos();
-                ddlSubRegla2.Enabled = false;
-                
+                if(Session["user"] == null)
+                {
+                    Response.Redirect("Index.aspx", false);
+                }
+                else
+                {
+                    txtFecha.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                    llenaCombos();
+                    ddltipRegla.Enabled = false;
+                    ddlSubRegla2.Enabled = false;
+                    txtObservador.Text = Session["nom_user"].ToString();
+                    txtNumEmpleado.Text = Session["cve_user"].ToString();
+                }
             }
         }
 
@@ -44,11 +53,11 @@ namespace WebAppBBS
             ddlOperacion.DataBind();
             ddlOperacion.Items.Insert(0, new ListItem("Selecciona una Operacion", "NA"));
 
-            ddltipRegla.DataSource = logicaNegocio.consultaDatos(3, "", "");
+            /*ddltipRegla.DataSource = logicaNegocio.consultaDatos(3, "", "");
             ddltipRegla.DataTextField = "dato";
             ddltipRegla.DataValueField = "cve_dato";
             ddltipRegla.DataBind();
-            ddltipRegla.Items.Insert(0, new ListItem("Selecciona un Tipo de Regla", "NA"));
+            ddltipRegla.Items.Insert(0, new ListItem("Selecciona un Tipo de Regla", "NA"));*/
 
             ddlComportamiento.DataSource = logicaNegocio.consultaDatos(5, "", "");
             ddlComportamiento.DataTextField = "dato";
@@ -89,25 +98,26 @@ namespace WebAppBBS
 
         protected void txtNumEmpleado_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNumEmpleado.Text) == false)
-            {
-                string cve_empleado = txtNumEmpleado.Text.ToString();
-                string cve_cuenta = "";
-                var infoUsr = logicaNegocio.consultaUsr(cve_empleado, cve_cuenta, 0);
+            //if (string.IsNullOrEmpty(txtNumEmpleado.Text) == false)
+            //{
+            //    string cve_empleado = txtNumEmpleado.Text.ToString();
+            //    string cve_cuenta = "";
+            //    var infoUsr = logicaNegocio.consultaUsr(cve_empleado, cve_cuenta, 0);
 
-                if(infoUsr.Count != 0)
-                {
-                    txtObservador.Text = infoUsr[0].nom_empleado.ToString();
-                }
-                else
-                {
-                    txtObservador.Text = "";
-                    txtObservador.Enabled = true;
-                }
+            //    if(infoUsr.Count != 0)
+            //    {
+            //        txtObservador.Text = infoUsr[0].nom_empleado.ToString();
+            //    }
+            //    else
+            //    {
+            //        txtObservador.Text = "";
+            //        txtObservador.Enabled = true;
+            //    }
 
-                //txtObservador.Text = infoUsr[0].nom_empleado.ToString();
-                //Response.Write("<script type=\"text/javascript\">alert('"+infoUsr[0].nom_empleado.ToString()+"');</script>");
-            }
+            //    //txtObservador.Text = infoUsr[0].nom_empleado.ToString();
+            //    //Response.Write("<script type=\"text/javascript\">alert('"+infoUsr[0].nom_empleado.ToString()+"');</script>");
+            //}
+            
         }
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -142,5 +152,15 @@ namespace WebAppBBS
             }
         }
 
+        protected void ddlRegla_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string cve_regla = ddlRegla.SelectedValue.ToString();
+            ddltipRegla.DataSource = logicaNegocio.consultaDatos(3, cve_regla, "");
+            ddltipRegla.DataTextField = "dato";
+            ddltipRegla.DataValueField = "cve_dato";
+            ddltipRegla.DataBind();
+            ddltipRegla.Items.Insert(0, new ListItem("Selecciona un Tipo de Regla", "NA"));
+            ddltipRegla.Enabled = true;
+        }
     }
 }

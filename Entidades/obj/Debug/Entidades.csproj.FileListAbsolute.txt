@@ -15,7 +15,7 @@ C:\Users\fergarciav\Documents\Repositorios\BBS\Entidades\bin\Debug\EntityFramewo
 C:\Users\fergarciav\Documents\Repositorios\BBS\Entidades\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\fergarciav\Documents\Repositorios\BBS\Entidades\bin\Debug\EntityFramework.xml
 C:\Users\fergarciav\Documents\Repositorios\BBS\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\fergarciav\Documents\Repositorios\BBS\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
 C:\Users\fergarciav\Documents\Repositorios\BBS\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\fergarciav\Documents\Repositorios\BBS\Entidades\obj\Debug\Entidades.dll
 C:\Users\fergarciav\Documents\Repositorios\BBS\Entidades\obj\Debug\Entidades.pdb
-C:\Users\fergarciav\Documents\Repositorios\BBS\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache

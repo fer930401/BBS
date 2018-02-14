@@ -14,7 +14,10 @@ namespace WebAppBBS
         int? error = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["user"] == null)
+            {
+                Response.Redirect("Index.aspx", false);
+            }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)

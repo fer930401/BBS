@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DHL_SCModelStoreContainer" CdmEntityContainer="DHL_SCEntities">
-    <FunctionImportMapping FunctionImportName="sp_WebAppBBS_cons_datos" FunctionName="DHL_SCModel.Store.sp_WebAppBBS_cons_datos">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppBBS_cons_datos_Result">
-          <ScalarProperty Name="cve_dato" ColumnName="cve_dato" />
-          <ScalarProperty Name="dato" ColumnName="dato" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_WebAppConsultaBBS" FunctionName="DHL_SCModel.Store.sp_WebAppConsultaBBS">
       <ResultMapping>
         <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppConsultaBBS_Result">
@@ -52,6 +44,14 @@
         <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppAdmBBS_Result">
           <ScalarProperty Name="error" ColumnName="error" />
           <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_WebAppBBS_cons_datos" FunctionName="DHL_SCModel.Store.sp_WebAppBBS_cons_datos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DHL_SCModel.sp_WebAppBBS_cons_datos_Result">
+          <ScalarProperty Name="cve_dato" ColumnName="cve_dato" />
+          <ScalarProperty Name="dato" ColumnName="dato" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

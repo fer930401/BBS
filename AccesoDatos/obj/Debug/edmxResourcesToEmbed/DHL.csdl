@@ -1,11 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DHL_SCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="DHL_SCEntities" annotation:LazyLoadingEnabled="true">
-    <FunctionImport Name="sp_WebAppBBS_cons_datos" ReturnType="Collection(DHL_SCModel.sp_WebAppBBS_cons_datos_Result)">
-      <Parameter Name="opc" Mode="In" Type="Int32" />
-      <Parameter Name="cve_filtro_1" Mode="In" Type="String" />
-      <Parameter Name="cve_filtro_2" Mode="In" Type="String" />
-    </FunctionImport>
     <FunctionImport Name="sp_WebAppConsultaBBS" ReturnType="Collection(DHL_SCModel.sp_WebAppConsultaBBS_Result)">
       <Parameter Name="opc" Mode="In" Type="Int32" />
     </FunctionImport>
@@ -32,11 +27,12 @@
       <Parameter Name="dia_bbs" Mode="In" Type="String" />
       <Parameter Name="opc" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="sp_WebAppBBS_cons_datos" ReturnType="Collection(DHL_SCModel.sp_WebAppBBS_cons_datos_Result)">
+      <Parameter Name="opc" Mode="In" Type="Int32" />
+      <Parameter Name="cve_filtro_1" Mode="In" Type="String" />
+      <Parameter Name="cve_filtro_2" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
-  <ComplexType Name="sp_WebAppBBS_cons_datos_Result">
-    <Property Type="String" Name="cve_dato" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="dato" Nullable="true" MaxLength="50" />
-  </ComplexType>
   <ComplexType Name="sp_WebAppConsultaBBS_Result">
     <Property Type="Int32" Name="id_incidencia" Nullable="false" />
     <Property Type="String" Name="observador" Nullable="false" MaxLength="50" />
@@ -70,5 +66,9 @@
   <ComplexType Name="sp_WebAppAdmBBS_Result">
     <Property Type="Int32" Name="error" Nullable="true" />
     <Property Type="String" Name="mensaje" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_WebAppBBS_cons_datos_Result">
+    <Property Type="String" Name="cve_dato" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="dato" Nullable="true" />
   </ComplexType>
 </Schema>

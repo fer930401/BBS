@@ -74,7 +74,7 @@
                                 </Columns>
                         </asp:GridView>
                         <hr />
-                        <asp:Button ID="btnExportar" runat="server" Text="Exportar Incidencias" CssClass="btn btn-success" />
+                        <asp:Button ID="btnExportar" runat="server" Text="Exportar Datos" CssClass="btn btn-success" />
                         <%--<asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-danger" OnClick="btnCancelar_Click" /> --%>
                         <br />
                         <br />

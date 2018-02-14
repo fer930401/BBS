@@ -8,3 +8,4 @@ C:\Users\fergarciav\Documents\Repositorios\BBS\Entidades\bin\Release\EntityFrame
 C:\Users\fergarciav\Documents\Repositorios\BBS\Entidades\obj\Release\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\fergarciav\Documents\Repositorios\BBS\Entidades\obj\Release\Entidades.dll
 C:\Users\fergarciav\Documents\Repositorios\BBS\Entidades\obj\Release\Entidades.pdb
+C:\Users\fergarciav\Documents\Repositorios\BBS\Entidades\obj\Release\Entidades.csprojResolveAssemblyReference.cache

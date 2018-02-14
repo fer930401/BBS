@@ -17,14 +17,30 @@ namespace WebAppBBS
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            BBSGraf(9, "colaborador");
-            BBSGraf(10, "responsable");
-            BBSGraf(13, "observador");
-            BBSGraf(11, "acto");
-            BBSGraf(12,"regla1");
-            BBSGraf(12,"regla2");
-            BBSGraf(12,"regla3");
-            BBSGraf(12,"regla4");
+            if (Session["user"] == null)
+            {
+                Response.Redirect("Index.aspx", false);
+            }
+            else
+            {
+                variables.Regla1 = "";
+                variables.Regla2 = "";
+                variables.Regla3 = "";
+                variables.Regla4 = "";
+                variables.Acto = "";
+                variables.Colaborador = "";
+                variables.Responsable = "";
+                variables.Observador = "";
+
+                BBSGraf(9, "colaborador");
+                BBSGraf(10, "responsable");
+                BBSGraf(13, "observador");
+                BBSGraf(11, "acto");
+                BBSGraf(12, "regla1");
+                BBSGraf(12, "regla2");
+                BBSGraf(12, "regla3");
+                BBSGraf(12, "regla4");
+            }
         }
 
         public void BBSGraf(int opc, string regla)
